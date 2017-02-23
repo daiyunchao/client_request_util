@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="ecce5917-0a94-4dca-b3f2-7c9927684cb3" name="client_request_util" url="http://192.168.1.68">
+        <fileTransfer host="192.168.1.68" port="22" rootFolder="/home/daiyc/myPrj/client_request_util" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
