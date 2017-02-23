@@ -29,6 +29,7 @@ let requestConfig= {
 };
 
 //调用:
+import requestUtils from 'client_request_util';
 var requestObj=new requestUtils({
     hostName: requestConfig.hostName,
     urlPrefix: requestConfig.urlPrefix,
