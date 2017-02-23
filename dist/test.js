@@ -63,11 +63,84 @@
 /******/ 	__webpack_require__.p = "";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 9);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _index = __webpack_require__(2);
+
+var _index2 = _interopRequireDefault(_index);
+
+var _config = __webpack_require__(1);
+
+var _config2 = _interopRequireDefault(_config);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/**
+ * Created by dyc on 2017/2/22.
+ */
+
+var requestObj = new _index2.default({
+    hostName: _config2.default.hostName,
+    urlPrefix: _config2.default.urlPrefix,
+    defaultHeader: _config2.default.defaultHeader,
+    defaultAddParams: _config2.default.defaultAddParams,
+    isPrintLog: _config2.default.isPrintLog,
+    defaultCallback: _config2.default.defaultCallback
+});
+
+//为了方便管理,单独将配置放置到了一个config文件中
+
+console.log("requestObj===>", requestObj);
+
+//request:
+requestObj.postByApplicationJson({
+    postURL: "/Video/getVideoDetail",
+    postArgs: {
+        "noticeId": "21412"
+    },
+    callback: function callback(responseData) {
+        console.log("responseData==>", responseData);
+        console.log("test end");
+    }
+});
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+/**
+ * Created by dyc on 2017/2/23.
+ * 配置文件
+ */
+var requestConfig = {
+    hostName: "http://192.168.1.68:8811",
+    urlPrefix: "/wbVideoManager/api", ///Video/getVideoDetail
+    defaultHeader: {},
+    defaultAddParams: {},
+    isPrintLog: true,
+    defaultCallback: function defaultCallback(fetchResponse, callback) {
+        console.log("in default call back ==>", fetchResponse);
+        return callback(fetchResponse);
+    }
+};
+exports.default = requestConfig;
+
+/***/ }),
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -79,7 +152,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _isomorphicFetch = __webpack_require__(2);
+var _isomorphicFetch = __webpack_require__(4);
 
 var _isomorphicFetch2 = _interopRequireDefault(_isomorphicFetch);
 
@@ -91,7 +164,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
  * Created by dyc on 2017/2/22.
  * 请求辅助
  */
-__webpack_require__(1).polyfill();
+__webpack_require__(3).polyfill();
 
 var requestUtils = function () {
 
@@ -337,7 +410,7 @@ var requestUtils = function () {
 exports.default = requestUtils;
 
 /***/ }),
-/* 1 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(process, global) {var require;/*!
@@ -476,7 +549,7 @@ function flush() {
 function attemptVertx() {
   try {
     var r = require;
-    var vertx = __webpack_require__(6);
+    var vertx = __webpack_require__(8);
     vertxNext = vertx.runOnLoop || vertx.runOnContext;
     return useVertxTimer();
   } catch (e) {
@@ -1497,22 +1570,22 @@ return Promise;
 
 })));
 //# sourceMappingURL=es6-promise.map
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3), __webpack_require__(4)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5), __webpack_require__(6)))
 
 /***/ }),
-/* 2 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // the whatwg-fetch polyfill installs the fetch() function
 // on the global object (window or self)
 //
 // Return that as the export for use in Webpack, Browserify etc.
-__webpack_require__(5);
+__webpack_require__(7);
 module.exports = self.fetch.bind(self);
 
 
 /***/ }),
-/* 3 */
+/* 5 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -1698,7 +1771,7 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 4 */
+/* 6 */
 /***/ (function(module, exports) {
 
 var g;
@@ -1725,7 +1798,7 @@ module.exports = g;
 
 
 /***/ }),
-/* 5 */
+/* 7 */
 /***/ (function(module, exports) {
 
 (function(self) {
@@ -2189,13 +2262,13 @@ module.exports = g;
 
 
 /***/ }),
-/* 6 */
+/* 8 */
 /***/ (function(module, exports) {
 
 /* (ignored) */
 
 /***/ }),
-/* 7 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(0);

@@ -2,10 +2,10 @@
  * Created by dyc on 2017/2/22.
  */
 
-import requestUtils from './index.js';
+import requestUtils from './src/index.js';
 
 //为了方便管理,单独将配置放置到了一个config文件中
-import requestConfig from './config';
+import requestConfig from './src/config';
 var requestObj=new requestUtils({
     hostName: requestConfig.hostName,
     urlPrefix: requestConfig.urlPrefix,

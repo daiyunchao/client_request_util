@@ -1,6 +1,6 @@
 {
   "name": "client_request_util",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "客户端请求辅助",
   "main": "index.js",
   "dependencies": {
@@ -11,7 +11,8 @@
     "webpack": "^2.2.1"
   },
   "scripts": {
-    "build": ""
+    "build": "webpack",
+    "test-build":"webpack --config webpack.config-test.js"
   },
   "keywords": [
     "es6",
