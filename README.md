@@ -6,11 +6,11 @@
 > 安装:
 
 ```
-npm i client_request_util
+下载该文件夹引用到项目中, ==注意 该项目是使用ES6进行实现的,请编译==
 
 ```
 
-> 测试: 可打开test.html 查看测试(注:测试中的配置为开发者局域网的地址),测试结果可f12 console中查看
+> 测试: 文件夹中有test.js文件,使用方法和例子都在里面
 
 #### 使用:
 
@@ -78,3 +78,14 @@ postArgs | 请求时候的参数 | {"noticeId":"123"} | {}
 addDefaultArgs | 是否添加默认参数,如果值为true,则请求时参数为postArgs+defaultAddParams,如果值为false,则请求时参数为:postArgs | true | true
 callback | 回调函数,fetch执行完成后的回调函数 | 函数 | 空函数
 beforeDoDefaultCallBack | 在执行callback前是否要执行:defaultCallback | true | true
+
+```
+gantt
+dateFormat YYYY-MM-DD
+section S1
+T1: 2014-01-01, 9d
+section S2
+T2: 2014-01-11, 9d
+section S3
+T3: 2014-01-02, 9d
+```
